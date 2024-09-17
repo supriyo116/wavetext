@@ -1,2 +1,1 @@
-web: daphne wavetext.asgi:application --port $PORT --bind 0.0.0.0 -v2
-chatworker: python manage.py runworker --settings=wavetext.settings -v2
+web: daphne -b 0.0.0.0 -p $PORT wavetext.asgi:application
