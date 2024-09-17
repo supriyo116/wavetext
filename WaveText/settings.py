@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-)31d&c42%hxa!53xbs(ggbh5$zxwa5q!cv+i*#gc=0%@6s9rls
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://wavetext-1d51ef7ee2f1.herokuapp.com/']
 
 
 # Application definition
@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'WaveText.urls'
@@ -144,17 +145,19 @@ ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 
 # Channel layers configuration
 CHANNEL_LAYERS = {
-        "default": {
-            "BACKEND": "channels_redis.core.RedisChannelLayer",
-            "CONFIG": {
-                "hosts": [os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379')],
-            },
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'rediss://:pacb5fdf0459fd0770a36295d711c67824ca1860bc23163ed52b13acf9d494cc5@ec2-52-4-158-92.compute-1.amazonaws.com:11930')],
         },
-    }
+    },
+}
 
-CSRF_TRUSTED_ORIGINS = ['https://wavetext-1d51ef7ee2f1.herokuapp.com/ ']
+
+CSRF_TRUSTED_ORIGINS = ['https://wavetext-1d51ef7ee2f1.herokuapp.com/']
 
 
 django_heroku.settings(locals())
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
