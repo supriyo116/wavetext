@@ -148,7 +148,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [os.environ.get('REDIS_URL', 'rediss://:pacb5fdf0459fd0770a36295d711c67824ca1860bc23163ed52b13acf9d494cc5@ec2-52-4-158-92.compute-1.amazonaws.com:11930')],
+            "hosts": ['rediss://:pacb5fdf0459fd0770a36295d711c67824ca1860bc23163ed52b13acf9d494cc5@ec2-52-4-158-92.compute-1.amazonaws.com:11930'],
         },
     },
 }
@@ -161,3 +161,12 @@ django_heroku.settings(locals())
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': ['rediss://:pacb5fdf0459fd0770a36295d711c67824ca1860bc23163ed52b13acf9d494cc5@ec2-52-4-158-92.compute-1.amazonaws.com:11930'],  # Use the Redis URL from the environment variable
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        },
+    }
+}
