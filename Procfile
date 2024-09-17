@@ -1,1 +1,1 @@
-web: gunicorn your_app.wsgi:application --workers=3 --threads=2
+web: uvicorn myproject.asgi:application --host 0.0.0.0 --port $PORT
