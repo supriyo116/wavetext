@@ -34,7 +34,6 @@ ALLOWED_HOSTS = ['https://wavetext-1d51ef7ee2f1.herokuapp.com/']
 # Application definition
 
 INSTALLED_APPS = [
-    'daphne',
     'channels',
     'django.contrib.admin',
     'django.contrib.auth',

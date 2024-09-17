@@ -1,1 +1,1 @@
-web: uvicorn wavetext.asgi:application --host 0.0.0.0 --port $PORT
+web: gunicorn WaveText.asgi:application --worker-class uvicorn.workers.UvicornWorker --log-file -
