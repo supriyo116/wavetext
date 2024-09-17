@@ -1,1 +1,2 @@
-web: gunicorn WaveText.asgi:application -k "daphne.runserver:Worker" --bind 0.0.0.0:$PORT
+web: daphne wavetext.asgi:application --port $PORT --bind 0.0.0.0
+worker: python manage.py runworker
