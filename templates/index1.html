@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'home/img/favicon.png' %}" rel="icon">
+    <title>Chat Center</title>
+
+    <!-- FontAwesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="{% static 'chatcenter/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'home/img/logo.png' %}" alt="Logo" style="max-height: 40px;">
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <span class="nav-link">Welcome, {{ user.username }}!</span>
+                </li>
+                
+                    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-bell"></i>
+        <span class="badge badge-danger">0</span> <!-- Start with 0 or a dynamic value -->
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown">
+        <!-- Notifications will be injected here -->
+    </div>
+</li>
+
+
+
+                <!-- Add button to switch to group chat page -->
+                <li class="nav-item">
+                    <a href="/chatcenter/groupchat/" class="nav-link">
+                        <i class="fas fa-users"></i> Group Chat
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <form method="GET" action="/chatcenter/">
+                        <input type="search" name="search" class="form-control" placeholder="Search" value="{{ request.GET.search }}">
+                    </form>
+                </div>
+                <div class="list-group list-group-flush" id="contact-list" style="height: 500px; overflow-y: auto;">
+                    <!-- Display users -->
+                    {% for user in users %}
+                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-room-name="{{ user.username }}">
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person rounded-circle mr-2" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4.5 4.5 0 0 0-4.5 4.5v.5h9v-.5A4.5 4.5 0 0 0 8 9z"/>
+                            </svg>
+                            <div>
+                                <p class="mb-0">{{ user.username }}</p>
+                            </div>
+                        </div>
+                    </a>
+                    {% empty %}
+                    <p class="text-center">No users found.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card">
+                <!-- Chat window -->
+                <div class="card-body" id="chat-log" style="height: 500px; overflow-y: auto;">
+                    <!-- Messages will be dynamically loaded here -->
+                </div>
+                <div class="card-footer">
+                    <div class="input-group">
+                        <input id="chat-message-input" type="text" class="form-control" placeholder="Type message">
+                        <div class="input-group-append">
+                            <button id="send-button" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Popper.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<!-- Bootstrap JS CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{% static 'chatcenter/js/chatcenter.js' %}"></script>
+</body>
+</html>

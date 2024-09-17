@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>WaveText - Seamless Conversations, Anytime, Anywhere</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'home/img/favicon.png' %}" rel="icon">
+<!--  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'home/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'home/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'home/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'home/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'home/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'home/css/main.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="{% static 'home/img/logo.png' %}" alt="">
+        {% comment %} <h1 class="sitename">Appland</h1> {% endcomment %}
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          {% comment %} <li><a href="#gallery">Gallery</a></li> {% endcomment %}
+          {% comment %} <li><a href="#pricing">Pricing</a></li> {% endcomment %}
+          <li><a href="#faq">F.A.Q</a></li>
+          {% comment %} <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> {% endcomment %}
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="/login/">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="{% static 'home/img/hero-img.png' %}" class="img-fluid animated" alt="">
+          </div>
+          <div class="col-lg-6  d-flex flex-column justify-content-center text-center text-md-start" data-aos="fade-in">
+            <h2>Seamless Conversations, Anytime, Anywhere</h2>
+            <p><i>Proudly Crafted in India</i></p>
+            <div class="d-flex mt-4 justify-content-center justify-content-md-start">
+              <a href="#" class="download-btn"><i class="bi bi-google-play"></i> <span>Google Play</span></a>
+              <a href="#" class="download-btn"><i class="bi bi-apple"></i> <span>App Store</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Connecting Conversations, Bridging Cultures</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              WaveText is a cutting-edge messaging application developed with pride in India. Designed to offer seamless communication and innovative features, WaveText is your go-to solution for connecting with friends, family, and colleagues across the globe.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> <span><b>Instant Messaging:</b> Experience real-time conversations with ease..</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span><b>Group Chats:</b> Stay connected with multiple people in one place.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span><b>Secure and Reliable:</b> Enjoy peace of mind with top-notch security features.</span></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>WaveText combines Indian ingenuity with global standards to deliver a messaging experience that's both intuitive and powerful. Whether you’re in bustling cities or remote areas, WaveText ensures your conversations flow smoothly, keeping you connected and engaged wherever you are.</p>
+            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Features Section -->
+    <section id="features" class="features section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Features</h2>
+        {% comment %} <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> {% endcomment %}
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="col-xl-5 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+            <img src="{% static 'home/img/features-2.png' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-xl-7 d-flex" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="row align-self-center gy-5">
+
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-award"></i>
+                <div>
+                  <h4>Instant Messaging</h4>
+                  <p>Send and receive messages in real-time, ensuring your conversations are always up-to-date.</p>
+                </div>
+              </div><!-- End Feature Item -->
+
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-card-checklist"></i>
+                <div>
+                  <h4>Group Chats</h4>
+                  <p>Create and manage group conversations effortlessly, keeping everyone in the loop.</p>
+                </div>
+              </div><!-- End Feature Item -->
+
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-dribbble"></i>
+                <div>
+                  <h4>Customizable Themes</h4>
+                  <p>Personalize your chat experience with a variety of themes and colors to match your style.</p>
+                </div>
+              </div><!-- End Feature Item -->
+
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-filter-circle"></i>
+                <div>
+                  <h4> Simple and Clean UI</h4>
+                  <p>Navigate with ease through an intuitive and sleek user interface designed for a seamless experience.</p>
+                </div>
+              </div><!-- End Feature Item -->
+
+              {% comment %} <div class="col-md-6 icon-box">
+                <i class="bi bi-lightning-charge"></i>
+                <div>
+                  <h4>Molestiae dolor</h4>
+                  <p>Et fuga et deserunt et enim. Dolorem architecto ratione tensa raptor marte</p>
+                </div>
+              </div><!-- End Feature Item -->
+
+              <div class="col-md-6 icon-box">
+                <i class="bi bi-patch-check"></i>
+                <div>
+                  <h4>Explicabo consectetur</h4>
+                  <p>Est autem dicta beatae suscipit. Sint veritatis et sit quasi ab aut inventore</p>
+                </div>
+              </div><!-- End Feature Item --> {% endcomment %}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Features Section -->
+
+    {% comment %} <!-- Feature Details Section -->
+    <section id="feature-details" class="feature-details section">
+
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <img src="{% static 'home/assets/img/features-1.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i><span> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+              <li><i class="bi bi-check"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+              <li><i class="bi bi-check"></i> <span>Ullam est qui quos consequatur eos accusamus.</span></li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{% static 'home/assets/img/features-2.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>Corporis temporibus maiores provident</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="{% static 'home/assets/img/features-3.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+            <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
+            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+              <li><i class="bi bi-check"></i><span> Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+              <li><i class="bi bi-check"></i> <span>Facilis ut et voluptatem aperiam. Autem soluta ad fugiat</span>.</li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
+            <img src="{% static 'home/assets/img/features-4.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
+            <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div><!-- Features Item -->
+
+      </div>
+
+    </section><!-- /Feature Details Section -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Gallery</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "centeredSlides": true,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 0
+                },
+                "768": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 30
+                },
+                "992": {
+                  "slidesPerView": 5,
+                  "spaceBetween": 30
+                },
+                "1200": {
+                  "slidesPerView": 7,
+                  "spaceBetween": 30
+                }
+              }
+            }
+          </script>
+<!--          <div class="swiper-wrapper align-items-center">-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-1.png"><img src="assets/img/app-gallery/app-gallery-1.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-2.png"><img src="assets/img/app-gallery/app-gallery-2.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-3.png"><img src="assets/img/app-gallery/app-gallery-3.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-4.png"><img src="assets/img/app-gallery/app-gallery-4.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-5.png"><img src="assets/img/app-gallery/app-gallery-5.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-6.png"><img src="assets/img/app-gallery/app-gallery-6.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-7.png"><img src="assets/img/app-gallery/app-gallery-7.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-8.png"><img src="assets/img/app-gallery/app-gallery-8.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-9.png"><img src="assets/img/app-gallery/app-gallery-9.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-10.png"><img src="assets/img/app-gallery/app-gallery-10.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-11.png"><img src="assets/img/app-gallery/app-gallery-11.png" class="img-fluid" alt=""></a></div>-->
+<!--            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery-full" href="assets/img/app-gallery/app-gallery-12.png"><img src="assets/img/app-gallery/app-gallery-12.png" class="img-fluid" alt=""></a></div>-->
+<!--          </div>-->
+ <!--         <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section></Gallery Section --> {% endcomment %}
+          
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        {% comment %} <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> {% endcomment %}
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-8">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How do I create an account on WaveText?</h3>
+                <div class="faq-content">
+                  <p>To create an account, visit the WaveText website, click on the “Sign Up” button, and follow the prompts to register using your email or phone number.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Is my data safe on WaveText?</h3>
+                <div class="faq-content">
+                  <p>Yes, WaveText employs robust security protocols to ensure your data and conversations are protected from unauthorized access.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Can I access WaveText from different devices?</h3>
+                <div class="faq-content">
+                  <p>Yes, as a web-based application, you can access WaveText from any device with an internet connection and a web browser.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How do I start a group chat?</h3>
+                <div class="faq-content">
+                  <p>To start a group chat, log in to your account, go to the main chat screen, and click on “New Group Chat.” Add members and give your group a name to begin.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              {% comment %} <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Can I customize the appearance of the app?</h3>
+                <div class="faq-content">
+                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item--> {% endcomment %}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+          
+          <!-- /Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        {% comment %} <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> {% endcomment %}
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Address</h3>
+                  <p>IIT Jammu</p>
+                  <p>Jammu, JK 181221</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Call Us</h3>
+                  <p>+91 90735 14931</p>
+                  <p>+91 0373 295 1513</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item" data-aos="fade" data-aos-delay="400">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>supriyo2003@gmail.com</p>
+                  <p>salamancahector729@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+{#              <div class="col-md-6">#}
+{#                <div class="info-item" data-aos="fade" data-aos-delay="500">#}
+{#                  <i class="bi bi-clock"></i>#}
+{#                  <h3>Working Hours</h3>#}
+{#                  <p>Monday - Friday</p>#}
+{#                  <p>9:00AM - 05:00PM</p>#}
+{#                </div>#}
+{#              </div><!-- End Info Item -->#}
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="{% static 'home/forms/contact.php' %}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                <div class="col-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                </div>
+
+                <div class="col-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    {% comment %} <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> {% endcomment %}
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">WaveText</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>IIT Jammu</p>
+            <p>Jammu, JK 181221</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+91 90735 14931</span></p>
+            <p><strong>Email:</strong> <span>supriyo2003@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+          </ul>
+        </div>
+
+        {% comment %} <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+          </ul>
+        </div> {% endcomment %}
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Us</h4>
+          <p>Stay connected—follow us for the latest updates and news!</p>
+          <div class="social-links d-flex">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">WaveText</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://www.linkedin.com/in/supriyo116/">Supriyo</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'home/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'home/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'home/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'home/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'home/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'home/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'home/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'home/js/main.js' %}"></script>
+
+</body>
+
+</html>
