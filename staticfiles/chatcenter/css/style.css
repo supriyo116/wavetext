@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.card-header, .card-footer {
+    background-color: #f8f9fa;
+}
+
+#chat-log {
+    background-color: #f0f0f0;
+}
+
+.list-group-item-action:hover {
+    background-color: #f1f1f1;
+}
+
+.media-body {
+    margin-left: 10px;
+}
+
+.media-body .bg-light {
+    padding: 10px;
+    border-radius: 10px;
+}
