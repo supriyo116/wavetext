@@ -1,1 +1,1 @@
-web: gunicorn WaveText.asgi:application --worker-class uvicorn.workers.UvicornWorker --log-file -
+web: daphne -u /tmp/daphne.sock wavetext.asgi:application --bind 0.0.0.0 --port ${PORT}
