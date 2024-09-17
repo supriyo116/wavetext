@@ -152,7 +152,7 @@ CHANNEL_LAYERS = {
         },
     }
 
-CSRF_TRUSTED_ORIGINS = ['']
+CSRF_TRUSTED_ORIGINS = ['https://wavetext-1d51ef7ee2f1.herokuapp.com/ ']
 
 
 django_heroku.settings(locals())
