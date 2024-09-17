@@ -13,7 +13,7 @@ function startChat(receiverUsername) {
     }
 
     chatSocket = new WebSocket(
-    `wss://${window.location.host}/ws/chat/private/${receiverUsername}/`
+    `ws://${window.location.host}/ws/chat/private/${receiverUsername}/`
 );
 
 

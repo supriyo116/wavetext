@@ -13,7 +13,7 @@ function startGroupChat(groupName) {
     }
 
     groupChatSocket = new WebSocket(
-        `wss://${window.location.host}/ws/chat/group/${groupName}/`
+        `ws://${window.location.host}/ws/chat/group/${groupName}/`
     );
 
     groupChatSocket.onopen = function(e) {

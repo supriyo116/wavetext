@@ -11,9 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import django_heroku
-import dj_database_url
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,12 +25,13 @@ SECRET_KEY = 'django-insecure-)31d&c42%hxa!53xbs(ggbh5$zxwa5q!cv+i*#gc=0%@6s9rls
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://wavetext-1d51ef7ee2f1.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'channels',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,7 +51,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'WaveText.urls'
@@ -140,32 +137,12 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 ASGI_APPLICATION = "WaveText.asgi.application"
 
 
-ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 
 # Channel layers configuration
 CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": ['rediss://:pacb5fdf0459fd0770a36295d711c67824ca1860bc23163ed52b13acf9d494cc5@ec2-52-4-158-92.compute-1.amazonaws.com:11930'],
-        },
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
     },
 }
 
 
-CSRF_TRUSTED_ORIGINS = ['https://wavetext-1d51ef7ee2f1.herokuapp.com/']
-
-
-django_heroku.settings(locals())
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': ['rediss://:pacb5fdf0459fd0770a36295d711c67824ca1860bc23163ed52b13acf9d494cc5@ec2-52-4-158-92.compute-1.amazonaws.com:11930'],  # Use the Redis URL from the environment variable
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        },
-    }
-}
