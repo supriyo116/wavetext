@@ -165,7 +165,8 @@ function updateNotifications() {
         .then(data => {
             console.log('Fetched messages:', data); // Debug line to check data
 
-            const dropdownMenu = document.querySelector('#notificationDropdown .dropdown-menu');
+            // Select the dropdown menu by its id directly
+            const dropdownMenu = document.getElementById('notificationMenu');
             if (!dropdownMenu) {
                 console.error('Dropdown menu not found.');
                 return;
@@ -185,7 +186,7 @@ function updateNotifications() {
             });
 
             // Update the badge count
-            const badge = document.querySelector('#notificationDropdown .badge');
+            const badge = document.getElementById('notificationBadge'); // Use the id 'notificationBadge'
             if (badge) {
                 badge.textContent = data.messages.length;
             } else {
@@ -202,4 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Optionally, you can set an interval to update notifications periodically
     setInterval(updateNotifications, 60000); // Update every 60 seconds
 });
+
+
 

@@ -201,20 +201,28 @@ def group_chat_history(request, group_name):
 
 
 @login_required
+
 def group_chat_view(request):
     # Get the current user
     user = request.user
 
-    # Filter groups to show only those the user is a member of
-    groups = Group.objects.filter(members=user)
+    # Get the search query from the GET request
+    search_query = request.GET.get('search', '')
 
-    # Fetch all users if needed for group creation
+    # Filter groups based on search query and membership
+    if search_query:
+        groups = Group.objects.filter(members=user, name__icontains=search_query)
+    else:
+        groups = Group.objects.filter(members=user)
+
+    # Fetch all users for group creation
     users = User.objects.all()
 
-    # Render the template with the filtered groups
+    # Render the template with the filtered groups and users
     return render(request, 'gc.html', {
         'groups': groups,
         'users': users,
+        'search_query': search_query,
     })
 
 @login_required
@@ -243,7 +251,9 @@ def group_send_message(request):
 
 
 def get_recent_messages(request):
-    messages = Message.objects.order_by('-timestamp')[:5]
+    user = request.user  # Get the current user
+    messages = Message.objects.filter(receiver=user).order_by('-timestamp')[:5]
+
     messages_data = [
         {
             'sender': msg.sender.username,
@@ -252,4 +262,5 @@ def get_recent_messages(request):
         }
         for msg in messages
     ]
+
     return JsonResponse({'messages': messages_data})
